@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grigorijsemykin.junien_seuranta.MainActivity">
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/departureStationInput"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/arrivalStationInput"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-1dp"
+        app:layout_constraintLeft_toLeftOf="@+id/departureStationInput"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Lähtö"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Saapuminen"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/departureStationInput" />
+
+    <Button
+        android:id="@+id/stationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="onHaeClick"
+        android:text="@string/stationButton"
+        app:layout_constraintLeft_toRightOf="@+id/arrivalStationInput"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="@+id/arrivalStationInput"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/arrivalStationInput"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TableLayout
+        android:id="@+id/timeTable"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:stretchColumns="0,1,2,3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textClock">
+
+        <TableRow>
+
+
+            <TextView
+                android:layout_column="0"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
+                android:paddingBottom="5dip"
+                android:paddingRight="15dip"
+                android:paddingStart="5dip"
+                android:paddingTop="5dip"
+                android:text="AIKA"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:layout_column="1"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
+                android:paddingBottom="5dip"
+                android:paddingRight="15dip"
+                android:paddingStart="15dip"
+                android:paddingTop="5dip"
+                android:text="JUNA"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:layout_column="2"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
+                android:paddingBottom="5dip"
+                android:paddingRight="5dip"
+                android:paddingStart="5dip"
+                android:paddingTop="5dip"
+                android:text="LAITURI"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:layout_column="3"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
+                android:paddingBottom="5dip"
+                android:paddingRight="5dip"
+                android:paddingStart="5dip"
+                android:paddingTop="5dip"
+                android:text="MÄÄRÄNPÄÄ"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrivalStationInput"
+        app:layout_constraintHorizontal_bias="0.501"/>
+
+    <Switch
+        android:id="@+id/liveSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Live  "
+        app:layout_constraintBottom_toBottomOf="@+id/departureStationInput"
+        app:layout_constraintLeft_toRightOf="@+id/departureStationInput"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/departureStationInput"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="8dp"
+        android:max="100"
+        app:layout_constraintLeft_toLeftOf="@+id/timeTable"
+        app:layout_constraintTop_toTopOf="@+id/textClock"
+        app:layout_constraintBottom_toBottomOf="@+id/textClock"
+        android:layout_marginBottom="0dp"/>
+
+</android.support.constraint.ConstraintLayout>
